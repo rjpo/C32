@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+
+            android:title="GENERAL OVERVIEW" />
+        <item
+            android:id="@+id/nav_gallery"
+
+            android:title="PRESSURES" />
+        <item
+            android:id="@+id/nav_slideshow"
+
+            android:title="ENGINE TURBO" />
+        <item
+            android:id="@+id/nav_manage"
+            android:title="TEMPERATURES" />
+        <item
+            android:id="@+id/nav_switches"
+            android:title="SWITCHES" />
+    </group>
+
+
+
+</menu>

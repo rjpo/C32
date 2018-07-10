@@ -1,0 +1,338 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:id="@+id/general"
+    tools:context="motor.simulador.luisf.c175_2.General">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="94dp"
+        android:layout_height="33dp"
+        android:text="ENGINE OIL PRESSURE"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:textColor="#ffc400"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline5"
+        android:layout_marginRight="8dp"
+        app:layout_constraintVertical_bias="0.57" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="94dp"
+        android:layout_height="33dp"
+        android:text="INTAKE MANIFOLD PRESSURE"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffc400"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        android:layout_marginRight="8dp"
+        app:layout_constraintVertical_bias="0.61" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="94dp"
+        android:layout_height="33dp"
+        android:text="FUEL PRESSURE"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffc400"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintVertical_bias="0.64" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="94dp"
+        android:layout_height="33dp"
+        android:text="ENGINE COOLANT PRESSURE"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffc400"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintRight_toLeftOf="@+id/guideline5"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="94dp"
+        android:layout_height="33dp"
+        android:text="FUEL OIL TEMPERATURE"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffc400"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="94dp"
+        android:layout_height="33dp"
+        android:text="ENGINE OIL TEMPERATURE"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffc400"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6" />
+
+    <com.xw.repo.BubbleSeekBar
+        android:id="@+id/intake"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#212121"
+        app:bsb_max="4096"
+        app:bsb_progress="0"
+        app:bsb_show_thumb_text="true"
+        android:rotation="270"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        android:layout_marginRight="8dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        android:layout_marginTop="8dp" />
+
+    <com.xw.repo.BubbleSeekBar
+        android:id="@+id/eop"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#212121"
+        app:bsb_max="4096"
+        app:bsb_progress="0"
+        app:bsb_show_thumb_text="true"
+        android:rotation="270"
+        app:layout_constraintRight_toLeftOf="@+id/guideline5"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10" />
+
+    <com.xw.repo.BubbleSeekBar
+        android:id="@+id/gfuel_pre"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#212121"
+        app:bsb_max="4096"
+        app:bsb_progress="0"
+        app:bsb_show_thumb_text="true"
+        android:rotation="270"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
+        android:layout_marginRight="8dp" />
+
+    <com.xw.repo.BubbleSeekBar
+        android:id="@+id/ecp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#212121"
+        app:bsb_max="4096"
+        app:bsb_progress="0"
+        app:bsb_show_thumb_text="true"
+        android:rotation="270"
+        app:layout_constraintRight_toLeftOf="@+id/guideline5"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.43" />
+
+    <com.xw.repo.BubbleSeekBar
+        android:id="@+id/gfurl_trmp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#212121"
+        app:bsb_max="255"
+        app:bsb_progress="0"
+        app:bsb_show_thumb_text="true"
+        android:rotation="270"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.42000002" />
+
+    <com.xw.repo.BubbleSeekBar
+        android:id="@+id/enoiltemp"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:background="#212121"
+        app:bsb_max="255"
+        app:bsb_progress="0"
+        app:bsb_show_thumb_text="true"
+        android:rotation="270"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline6"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
+        android:layout_marginRight="8dp"
+        app:layout_constraintVertical_bias="0.42000002" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="100dp"
+        android:layout_height="33dp"
+        android:text="SHUTDOWN SWITHC"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffc400"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.4" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="100dp"
+        android:layout_height="33dp"
+        android:text="COOLANT LEVEL"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffc400"
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.4" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GENERAL OVERVIEW"
+        android:textColor="#ffc400"
+        android:textSize="20dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline4"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline5"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline6"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline8"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline9"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline10"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline11"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+
+</android.support.constraint.ConstraintLayout>
