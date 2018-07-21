@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#000"
     android:id="@+id/pressure"
-    tools:context="motor.simulador.luisf.c175_2.Pressure">
+    tools:context="engine.simulador.CAT.C32.Pressure">
 
     <TextView
         android:id="@+id/textView"

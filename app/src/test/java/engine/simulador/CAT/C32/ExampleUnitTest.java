@@ -1,4 +1,4 @@
-package motor.simulador.luisf.c175_2;
+package engine.simulador.CAT.C32;
 
 import org.junit.Test;
 

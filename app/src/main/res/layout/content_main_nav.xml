@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#000"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="motor.simulador.luisf.c175_2.MainNavActivity"
+    tools:context="engine.simulador.CAT.C32.MainNavActivity"
     tools:showIn="@layout/app_bar_main_nav">
 
     <com.xw.repo.BubbleSeekBar

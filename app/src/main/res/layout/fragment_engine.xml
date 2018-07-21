@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#000"
     android:orientation="horizontal"
-    tools:context="motor.simulador.luisf.c175_2.Engine">
+    tools:context="engine.simulador.CAT.C32.Engine">
 
     <LinearLayout
         android:layout_width="match_parent"

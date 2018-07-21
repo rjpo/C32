@@ -1,7 +1,5 @@
-package motor.simulador.luisf.c175_2;
+package engine.simulador.CAT.C32;
 
-import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,21 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.Button;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.os.Handler;
 
-import java.util.EmptyStackException;
 import java.util.UUID;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
-import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.Toast;
 import android.widget.CompoundButton;
 
 import com.xw.repo.BubbleSeekBar;
