@@ -8,124 +8,120 @@
     android:background="#000"
     tools:context="engine.simulador.CAT.C32.MainActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/boton11"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:text="GENERAL OVERVIEW"
-        android:background="@drawable/boton_redondo"
-        android:textColor="#ffc400"
-        android:layout_marginLeft="24dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/g1688"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        android:layout_marginRight="16dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/boton22"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:text="PRESSURES"
-        android:background="@drawable/boton_redondo"
-        android:textColor="#ffc400"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="24dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/g1551"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintLeft_toLeftOf="@+id/guideline3"
-        app:layout_constraintHorizontal_bias="0.545"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/boton33"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:background="@drawable/boton_redondo"
-        android:text="ENGINE TURBO"
-        android:textColor="#ffc400"
-        android:layout_marginLeft="24dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/g1609"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        android:layout_marginRight="16dp"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        android:layout_marginTop="24dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/boton44"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/boton_redondo"
-        android:text="TEMPERATURES"
-        android:textColor="#ffc400"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/g1540"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintLeft_toLeftOf="@+id/guideline2"
         app:layout_constraintRight_toLeftOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/boton55"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:text="SWITCHES"
-        android:background="@drawable/boton_redondo"
-        android:textColor="#ffc400"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginTop="56dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/g1650"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="24dp"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        android:layout_marginTop="24dp"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.0
+" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="24dp"
+        android:layout_width="209dp"
+        android:layout_height="146dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/logorelax"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintLeft_toLeftOf="@+id/guideline2"
         app:layout_constraintRight_toLeftOf="@+id/guideline3"
-        android:layout_marginRight="16dp"
-        app:layout_constraintHorizontal_bias="0.6"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        android:src="@drawable/logorelax"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.33" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline3"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.660473" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline4"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 

@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -33,17 +34,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //private BluetoothDevice device;
 
     public static String EXTRA_DEVICE_ADDRESS = "device_address";
-
-    Button boton1, boton2, boton3, boton4, boton5;
+    ImageButton boton1, boton2, boton3, boton4, boton5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
-        boton1 = (Button) findViewById(R.id.boton11);
-        boton2 = (Button) findViewById(R.id.boton22);
-        boton3 = (Button) findViewById(R.id.boton33);
-        boton4 = (Button) findViewById(R.id.boton44);
-        boton5 = (Button) findViewById(R.id.boton55);
+        boton1 = (ImageButton) findViewById(R.id.boton11);
+        boton2 = (ImageButton) findViewById(R.id.boton22);
+        boton3 = (ImageButton) findViewById(R.id.boton33);
+        boton4 = (ImageButton) findViewById(R.id.boton44);
+        boton5 = (ImageButton) findViewById(R.id.boton55);
         boton1.setOnClickListener(this);
         boton2.setOnClickListener(this);
         boton3.setOnClickListener(this);
