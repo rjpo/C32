@@ -1,8 +1,11 @@
 package engine.simulador.CAT.C32;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -30,8 +33,15 @@ import android.widget.Toast;
 import com.xw.repo.BubbleSeekBar;
 
 
-public class MainNavActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SeekBar.OnSeekBarChangeListener, General.General_Listener, Engine.Engine_Listener, Pressure.Pressure_listener, Tempetarures.Temperatures_listener, Swich.Swich_listener, BubbleSeekBar.OnProgressChangedListener {
+public class MainNavActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener,
+        SeekBar.OnSeekBarChangeListener,
+        General.General_Listener,
+        Engine.Engine_Listener,
+        Pressure.Pressure_listener,
+        Tempetarures.Temperatures_listener,
+        Swich.Swich_listener,
+        BubbleSeekBar.OnProgressChangedListener {
 
 
 
@@ -487,6 +497,19 @@ public class MainNavActivity extends AppCompatActivity
                 finish();
             }
         }
+    }
+    public void write(String key, String value) {
+        Log.e("WRITE_KEY", key+" "+value);
+        SharedPreferences global = getSharedPreferences("stores", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = global.edit();
+        editor.putString(key, value).apply();
+    }
+
+    public String get(String key) {
+        Log.e("RUN_KEY", key);
+        SharedPreferences global = getSharedPreferences("stores", Context.MODE_PRIVATE);
+        Log.e("VALUE_KEY",  global.getString(key, ""));
+        return global.getString(key, "");
     }
 
 

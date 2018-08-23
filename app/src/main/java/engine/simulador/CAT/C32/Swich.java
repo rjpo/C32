@@ -16,6 +16,9 @@ public class Swich extends Fragment {
     Switch swich, swich1, swich2, swich3, swich4, swich5, swich6, swich7;
 
     int on;
+    public final String FALSE = "false", TRUE = "true";
+
+    public final String SWICH = "swich";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,6 +34,12 @@ public class Swich extends Fragment {
         swich6 = (Switch)rootView.findViewById(R.id.shutdownSwitch);
         swich7 = (Switch)rootView.findViewById(R.id.keySwi);
 
+        String swich_state = ((MainNavActivity)getActivity()).get(SWICH);
+
+        if (!swich_state.equalsIgnoreCase("")) {
+            this.setSwich(swich, swich_state);
+        }
+
         swich.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -42,12 +51,14 @@ public class Swich extends Fragment {
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICH, "true");
 
                     } else {
                         byte w[] = {1, 1, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICH, "false");
                     }
                 }catch (Exception e){}
             }
@@ -237,5 +248,16 @@ public class Swich extends Fragment {
 
     public interface Swich_listener {
         public void onSwich_SwichChange(byte b);
+    }
+
+    public void setSwich(Switch s, String STATUS) {
+        switch (STATUS) {
+            case TRUE:
+                s.setChecked(true);
+                break;
+            case FALSE:
+                s.setChecked(false);
+                break;
+        }
     }
 }

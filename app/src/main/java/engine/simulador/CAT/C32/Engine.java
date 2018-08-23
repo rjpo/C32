@@ -2,6 +2,7 @@ package engine.simulador.CAT.C32;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,16 +14,15 @@ public class Engine extends Fragment {
 
     int progres;
     Engine_Listener listener;
-    Store storage;
     BubbleSeekBar seekBar, seekBarr, seekBar1, seekBar2,seekBar3,seekBar4,seekBar5;
-    public static String SEEKBAR = "seekBar";
-    public static String SEEKBARR = "seekBarr";
+    public static final String SEEKBAR = "seekBar";
+    public static final String SEEKBARR = "seekBarr";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        storage = new Store();
+
         View vie = inflater.inflate(R.layout.fragment_engine, container, false);
         seekBarr = (BubbleSeekBar) vie.findViewById(R.id.tbc1);
         seekBar = (BubbleSeekBar) vie.findViewById(R.id.atmos);
@@ -32,11 +32,27 @@ public class Engine extends Fragment {
         seekBar4 = (BubbleSeekBar) vie.findViewById(R.id.turbo4);
         seekBar5 = (BubbleSeekBar) vie.findViewById(R.id.intakeman2);
 
-        seekBar.setProgress(Float.parseFloat(storage.get(SEEKBAR)));
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBAR).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBAR);
+            seekBar.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBAR)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARR).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARR);
+            seekBarr.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARR)
+            ));
+        }
+
         seekBar.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 progres=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBAR, ""+progressFloat);
             }
 
             @Override
@@ -58,7 +74,7 @@ public class Engine extends Fragment {
 
             @Override
             public void getProgressOnFinally(int progress, float progressFloat) {
-                storage.write(SEEKBAR, ""+progressFloat);
+
             }
         });
 
@@ -371,6 +387,8 @@ public class Engine extends Fragment {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 progres=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARR, ""+progressFloat);
             }
 
             @Override
