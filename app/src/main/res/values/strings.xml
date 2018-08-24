@@ -9,4 +9,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fuel_rail_temp">FUEL RAIL TEMP.</string>
+    <string name="intake_manifold_air_temp_2">INTAKE MANIFOLD AIR TEMP. #2</string>
+    <string name="temperatures">TEMPERATURES</string>
+    <string name="right_exhaust_temp">RIGHT EXHAUST TEMP.</string>
+    <string name="left_exhaust_temp">LEFT EXHAUST TEMP</string>
+    <string name="fuel_temperature">FUEL TEMPERATURE</string>
+    <string name="engine_collant_temp">ENGINE COLLANT TEMP.</string>
+    <string name="engine_oil_temp">ENGINE OIL TEMP.</string>
+    <string name="ambient_air_temp">AMBIENT AIR TEMP.</string>
+    <string name="intake_manifold_air_temp_1">INTAKE MANIFOLD AIR TEMP. #1</string>
 </resources>

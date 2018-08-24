@@ -3,6 +3,7 @@ package engine.simulador.CAT.C32;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,16 @@ public class Tempetarures extends Fragment {
 
 
     int pro;
-    BubbleSeekBar seekBar,seekBar1, seekBar2, seekBar3, seekBar4, seekBar5, seekBar6, seekBar7, seekBar8,seekBar9;
+    BubbleSeekBar seekBartempengine, seekBartempengineoil, seekBartempfuel, seekBartempfuelrail, seekBartempambient, seekBartempmanifold, seekBartempmanifold2, seekBartempleft, seekBartempraight;
+    public static final String SEEKBARTEMPENGINE = "seekBartempengine";
+    public static final String SEEKBARTEMPENGINEOIL = "seekBartempengineoil";
+    public static final String SEEKBARTEMPFUEL = "seekBartempfuel";
+    public static final String SEEKBARTEMPFUELRAIL = "seekBartempfuelrail";
+    public static final String SEEKBARTEMPAMBIENT = "seekBartempambient";
+    public static final String SEEKBARTEMPMANIFOLD = "seekBartempmanifold";
+    public static final String SEEKBARTEMPMANIFOLD2 = "seekBartempmanifold2";
+    public static final String SEEKBARTEMPLEFT = "seekBartempleft";
+    public static final String SEEKBARTEMPRIGHT = "seekBartempright";
 
 
     Temperatures_listener listener;
@@ -24,20 +34,85 @@ public class Tempetarures extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tempetarures, container, false);
 
-        seekBar1=(BubbleSeekBar) rootView.findViewById(R.id.tempengine);
-        seekBar2=(BubbleSeekBar) rootView.findViewById(R.id.tempengineoil);
-        seekBar3=(BubbleSeekBar) rootView.findViewById(R.id.tempfuel);
-        seekBar4=(BubbleSeekBar) rootView.findViewById(R.id.tempfuelrail);
-        seekBar5=(BubbleSeekBar) rootView.findViewById(R.id.tempambient);
-        seekBar6=(BubbleSeekBar) rootView.findViewById(R.id.tempmanifold);
-        seekBar7=(BubbleSeekBar) rootView.findViewById(R.id.tempmanifold2);
-        seekBar8=(BubbleSeekBar) rootView.findViewById(R.id.templeft);
-        seekBar9=(BubbleSeekBar) rootView.findViewById(R.id.tempraight);
+        seekBartempengine=(BubbleSeekBar) rootView.findViewById(R.id.tempengine);
+        seekBartempengineoil=(BubbleSeekBar) rootView.findViewById(R.id.tempengineoil);
+        seekBartempfuel=(BubbleSeekBar) rootView.findViewById(R.id.tempfuel);
+        seekBartempfuelrail=(BubbleSeekBar) rootView.findViewById(R.id.tempfuelrail);
+        seekBartempambient=(BubbleSeekBar) rootView.findViewById(R.id.tempambient);
+        seekBartempmanifold=(BubbleSeekBar) rootView.findViewById(R.id.tempmanifold);
+        seekBartempmanifold2=(BubbleSeekBar) rootView.findViewById(R.id.tempmanifold2);
+        seekBartempleft=(BubbleSeekBar) rootView.findViewById(R.id.templeft);
+        seekBartempraight=(BubbleSeekBar) rootView.findViewById(R.id.tempraight);
 
-        seekBar1.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPENGINE).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPENGINE);
+            seekBartempengine.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPENGINE)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPENGINEOIL).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPENGINEOIL);
+            seekBartempengineoil.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPENGINEOIL)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPFUEL).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPFUEL);
+            seekBartempfuel.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPFUEL)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPFUELRAIL).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPFUELRAIL);
+            seekBartempfuelrail.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPFUELRAIL)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPAMBIENT).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPAMBIENT);
+            seekBartempambient.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPAMBIENT)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPMANIFOLD).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPMANIFOLD);
+            seekBartempmanifold.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPMANIFOLD)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPMANIFOLD2).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPMANIFOLD2);
+            seekBartempmanifold2.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPMANIFOLD2)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPLEFT).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPLEFT);
+            seekBartempleft.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPLEFT)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTEMPRIGHT).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTEMPRIGHT);
+            seekBartempraight.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTEMPRIGHT)
+            ));
+        }
+
+        seekBartempengine.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPENGINE, ""+progressFloat);
             }
 
             @Override
@@ -92,10 +167,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar2.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempengineoil.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPENGINEOIL, ""+progressFloat);
             }
 
             @Override
@@ -150,10 +227,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar3.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempfuel.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPFUEL, ""+progressFloat);
             }
 
             @Override
@@ -209,10 +288,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar4.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempfuelrail.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPFUELRAIL, ""+progressFloat);
             }
 
             @Override
@@ -267,10 +348,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar5.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempambient.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPAMBIENT, ""+progressFloat);
             }
 
             @Override
@@ -325,10 +408,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar6.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempmanifold.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPMANIFOLD, ""+progressFloat);
             }
 
             @Override
@@ -383,10 +468,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar7.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempmanifold2.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPMANIFOLD2, ""+progressFloat);
             }
 
             @Override
@@ -441,10 +528,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar8.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempleft.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPLEFT, ""+progressFloat);
             }
 
             @Override
@@ -499,10 +588,12 @@ public class Tempetarures extends Fragment {
             }
         });*/
 
-        seekBar9.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartempraight.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=1;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTEMPRIGHT, ""+progressFloat);
             }
 
             @Override

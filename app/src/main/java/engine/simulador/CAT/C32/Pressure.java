@@ -3,6 +3,7 @@ package engine.simulador.CAT.C32;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,15 @@ public class Pressure extends Fragment {
 
 
     int pro;
-    BubbleSeekBar seekBar,seekBar1, seekBar2, seekBar3, seekBar4, seekBar5, seekBar6, seekBar7;
+    BubbleSeekBar seekBarhcprail,seekBarunfil, seekBareop, seekBarfiltre_in, seekBartransfer, seekBarfuel_presu, seekBarcoolant, seekBarcrankcase;
+    public static final String SEEKBARHCPRAIL = "seekBarhcprail";
+    public static final String SEEKBARUNFIL = "seekBarunfil";
+    public static final String SEEKBAREOP = "seekBareop";
+    public static final String SEEKBARFILTRE_IN = "seekBarfiltre_in";
+    public static final String SEEKBARTRANSFER = "seekBartransfer";
+    public static final String SEEKBARFUEL_PRESU = "seekBarfuel_presu";
+    public static final String SEEKBARCOOLANT = "seekBarcoolant";
+    public static final String SEEKBARCRANKCASE = "seekBarcrankcase";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,19 +45,77 @@ public class Pressure extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_pressure, container, false);
         View rootView = inflater.inflate(R.layout.fragment_pressure, container, false);
-        seekBar=(BubbleSeekBar) rootView.findViewById(R.id.hcprrail);
-        seekBar1=(BubbleSeekBar) rootView.findViewById(R.id.unfil);
-        seekBar2=(BubbleSeekBar) rootView.findViewById(R.id.engine_i);
-        seekBar3=(BubbleSeekBar) rootView.findViewById(R.id.filtre_in);
-        seekBar4=(BubbleSeekBar) rootView.findViewById(R.id.transfer);
-        seekBar5=(BubbleSeekBar) rootView.findViewById(R.id.fuel_presu);
-        seekBar6=(BubbleSeekBar) rootView.findViewById(R.id.coolant);
-        seekBar7=(BubbleSeekBar) rootView.findViewById(R.id.crankcase);
+        seekBarhcprail=(BubbleSeekBar) rootView.findViewById(R.id.hcprrail);
+        seekBarunfil=(BubbleSeekBar) rootView.findViewById(R.id.unfil);
+        seekBareop=(BubbleSeekBar) rootView.findViewById(R.id.engine_i);
+        seekBarfiltre_in=(BubbleSeekBar) rootView.findViewById(R.id.filtre_in);
+        seekBartransfer=(BubbleSeekBar) rootView.findViewById(R.id.transfer);
+        seekBarfuel_presu=(BubbleSeekBar) rootView.findViewById(R.id.fuel_presu);
+        seekBarcoolant=(BubbleSeekBar) rootView.findViewById(R.id.coolant);
+        seekBarcrankcase=(BubbleSeekBar) rootView.findViewById(R.id.crankcase);
 
-        seekBar7.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        if (!((MainNavActivity)getActivity()).get(SEEKBARHCPRAIL).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARHCPRAIL);
+            seekBarhcprail.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARHCPRAIL)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARUNFIL).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARUNFIL);
+            seekBarunfil.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARUNFIL)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBAREOP).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBAREOP);
+            seekBareop.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBAREOP)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARFILTRE_IN).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARFILTRE_IN);
+            seekBarfiltre_in.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARFILTRE_IN)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARTRANSFER).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARTRANSFER);
+            seekBartransfer.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARTRANSFER)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARFUEL_PRESU).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARFUEL_PRESU);
+            seekBarfuel_presu.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARFUEL_PRESU)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARCOOLANT).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARCOOLANT);
+            seekBarcoolant.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARCOOLANT)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARCRANKCASE).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARCRANKCASE);
+            seekBarcrankcase.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARCRANKCASE)
+            ));
+        }
+
+        seekBarcrankcase.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARCRANKCASE, ""+progressFloat);
 
             }
 
@@ -107,10 +174,12 @@ public class Pressure extends Fragment {
 
         });*/
 
-        seekBar6.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBarcoolant.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARCOOLANT, ""+progressFloat);
             }
 
             @Override
@@ -163,10 +232,13 @@ public class Pressure extends Fragment {
 
         });*/
 
-        seekBar5.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBarfuel_presu.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARFUEL_PRESU, ""+progressFloat);
+
             }
 
             @Override
@@ -219,10 +291,12 @@ public class Pressure extends Fragment {
 
         });*/
 
-        seekBar4.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBartransfer.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARTRANSFER, ""+progressFloat);
             }
 
             @Override
@@ -277,10 +351,12 @@ public class Pressure extends Fragment {
 
         });*/
 
-        seekBar3.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBarfiltre_in.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARFILTRE_IN, ""+progressFloat);
             }
 
             @Override
@@ -333,10 +409,12 @@ public class Pressure extends Fragment {
 
         });*/
 
-        seekBar2.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBareop.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBAREOP, ""+progressFloat);
             }
 
             @Override
@@ -391,10 +469,12 @@ public class Pressure extends Fragment {
 
         });*/
 
-        seekBar1.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBarunfil.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARUNFIL, ""+progressFloat);
             }
 
             @Override
@@ -447,10 +527,12 @@ public class Pressure extends Fragment {
 
         });*/
 
-        seekBar.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBarhcprail.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 pro=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARHCPRAIL, ""+progressFloat);
             }
 
             @Override

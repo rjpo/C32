@@ -14,9 +14,14 @@ public class Engine extends Fragment {
 
     int progres;
     Engine_Listener listener;
-    BubbleSeekBar seekBar, seekBarr, seekBar1, seekBar2,seekBar3,seekBar4,seekBar5;
+    BubbleSeekBar seekBar, seekBarr, seekBar1, seekBarintake,seekBar3,seekBar4,seekBar5;
     public static final String SEEKBAR = "seekBar";
     public static final String SEEKBARR = "seekBarr";
+    public static final String SEEKBAR1 = "seekBar1";
+    public static final String SEEKBARINTAKE = "seekBarintake";
+    public static final String SEEKBAR3 = "seekBar3";
+    public static final String SEEKBAR4 = "seekBar4";
+    public static final String SEEKBAR5 = "seekBar5";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,7 +32,7 @@ public class Engine extends Fragment {
         seekBarr = (BubbleSeekBar) vie.findViewById(R.id.tbc1);
         seekBar = (BubbleSeekBar) vie.findViewById(R.id.atmos);
         seekBar1 = (BubbleSeekBar) vie.findViewById(R.id.turbo2);
-        seekBar2 = (BubbleSeekBar) vie.findViewById(R.id.intakeman);
+        seekBarintake = (BubbleSeekBar) vie.findViewById(R.id.intakeman);
         seekBar3 = (BubbleSeekBar) vie.findViewById(R.id.turbo3);
         seekBar4 = (BubbleSeekBar) vie.findViewById(R.id.turbo4);
         seekBar5 = (BubbleSeekBar) vie.findViewById(R.id.intakeman2);
@@ -44,6 +49,41 @@ public class Engine extends Fragment {
             Log.e("LOAD_VALUE_KEY", SEEKBARR);
             seekBarr.setProgress(Float.parseFloat(
                     ((MainNavActivity)getActivity()).get(SEEKBARR)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBAR1).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBAR1);
+            seekBar1.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBAR1)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBARINTAKE).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBARINTAKE);
+            seekBarintake.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBARINTAKE)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBAR3).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBAR3);
+            seekBar3.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBAR3)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBAR4).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBAR4);
+            seekBar4.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBAR4)
+            ));
+        }
+
+        if (!((MainNavActivity)getActivity()).get(SEEKBAR5).equalsIgnoreCase("")) {
+            Log.e("LOAD_VALUE_KEY", SEEKBAR5);
+            seekBar5.setProgress(Float.parseFloat(
+                    ((MainNavActivity)getActivity()).get(SEEKBAR5)
             ));
         }
 
@@ -111,6 +151,8 @@ public class Engine extends Fragment {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 progres=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBAR5, ""+progressFloat);
             }
 
             @Override
@@ -169,6 +211,8 @@ public class Engine extends Fragment {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 progres=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBAR4, ""+progressFloat);
             }
 
             @Override
@@ -223,6 +267,8 @@ public class Engine extends Fragment {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 progres=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBAR3, ""+progressFloat);
             }
 
             @Override
@@ -273,10 +319,12 @@ public class Engine extends Fragment {
             }
         });*/
 
-        seekBar2.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
+        seekBarintake.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 progres=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBARINTAKE, ""+progressFloat);
             }
 
             @Override
@@ -333,6 +381,8 @@ public class Engine extends Fragment {
             @Override
             public void onProgressChanged(int progress, float progressFloat) {
                 progres=progress;
+                Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
+                ((MainNavActivity)getActivity()).write(SEEKBAR1, ""+progressFloat);
             }
 
             @Override
