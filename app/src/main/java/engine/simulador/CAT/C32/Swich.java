@@ -13,203 +13,239 @@ public class Swich extends Fragment {
 
     Swich_listener listener;
 
-    Switch swich, swich1, swich2, swich3, swich4, swich5, swich6, swich7;
+    Switch swichoilFilter, swichcoolantLevel, swichfuelwslevel, swichfuelpp, swichthrotback, swichestop, swichshutdown;
 
     int on;
     public final String FALSE = "false", TRUE = "true";
 
-    public final String SWICH = "swich";
+    public final String SWICHOILFILTER = "swichoilFilter";
+    public final String SWICHCOOLANTLEVEL = "swichcoolantLevel";
+    public final String SWICHSHUTDOWN = "swichshutdown";
+    public final String SWICHESTOP = "swichestop";
+    public final String SWICHTHROTBACK = "swichthrotBack";
+    public final String SWICHFUELWSLEVEL = "swichfuelwslevel";
+    public final String SWICHFUELPP = "swichfuelpp";
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_swich, container, false);
         // Inflate the layout for this fragment
-        swich = (Switch)rootView.findViewById(R.id.oilFilter);
-        swich1 = (Switch)rootView.findViewById(R.id.coolantLevel);
-        swich2 = (Switch)rootView.findViewById(R.id.fuelWSlevell);
-        swich3 = (Switch)rootView.findViewById(R.id.fuelPPSwitch);
-        swich4 = (Switch)rootView.findViewById(R.id.throtBack);
-        swich5 = (Switch)rootView.findViewById(R.id.estop);
-        swich6 = (Switch)rootView.findViewById(R.id.shutdownSwitch);
-        swich7 = (Switch)rootView.findViewById(R.id.keySwi);
+        swichoilFilter = (Switch)rootView.findViewById(R.id.oilFilter);
+        swichcoolantLevel = (Switch)rootView.findViewById(R.id.coolantLevel);
+        swichfuelwslevel = (Switch)rootView.findViewById(R.id.fuelWSlevell);
+        swichfuelpp = (Switch)rootView.findViewById(R.id.fuelPPSwitch);
+        swichthrotback = (Switch)rootView.findViewById(R.id.throtBack);
+        swichestop = (Switch)rootView.findViewById(R.id.estop);
+        swichshutdown = (Switch)rootView.findViewById(R.id.shutdownSwitch);
 
-        String swich_state = ((MainNavActivity)getActivity()).get(SWICH);
+        String swichoilfilter_state = ((MainNavActivity)getActivity()).get(SWICHOILFILTER);
 
-        if (!swich_state.equalsIgnoreCase("")) {
-            this.setSwich(swich, swich_state);
+        if (!swichoilfilter_state.equalsIgnoreCase("")) {
+            this.setSwich(swichoilFilter, swichoilfilter_state);
         }
 
-        swich.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        String swichcoolantLevel_state = ((MainNavActivity)getActivity()).get(SWICHCOOLANTLEVEL);
+
+        if (!swichcoolantLevel_state.equalsIgnoreCase("")) {
+            this.setSwich(swichcoolantLevel, swichcoolantLevel_state);
+        }
+
+        String swichshutdown_state = ((MainNavActivity)getActivity()).get(SWICHSHUTDOWN);
+
+        if (!swichshutdown_state.equalsIgnoreCase("")) {
+            this.setSwich(swichshutdown, swichshutdown_state);
+        }
+
+        String swichestop_state = ((MainNavActivity)getActivity()).get(SWICHESTOP);
+
+        if (!swichestop_state.equalsIgnoreCase("")) {
+            this.setSwich(swichestop, swichestop_state);
+        }
+
+        String swichthrotBack_state = ((MainNavActivity)getActivity()).get(SWICHTHROTBACK);
+
+        if (!swichthrotBack_state.equalsIgnoreCase("")) {
+            this.setSwich(swichthrotback, swichthrotBack_state);
+        }
+
+        String swichfuelwslevel_state = ((MainNavActivity)getActivity()).get(SWICHFUELWSLEVEL);
+
+        if (!swichfuelwslevel_state.equalsIgnoreCase("")) {
+            this.setSwich(swichfuelwslevel, swichfuelwslevel_state);
+        }
+
+        String swichfuelpp_state = ((MainNavActivity)getActivity()).get(SWICHFUELPP);
+
+        if (!swichfuelpp_state.equalsIgnoreCase("")) {
+            this.setSwich(swichfuelpp, swichfuelpp_state);
+        }
+
+
+        swichoilFilter.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
 
-                    if (swich.isChecked()) {
+                    if (swichoilFilter.isChecked()) {
                         byte w[] = {1, 1, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
-                        ((MainNavActivity)getActivity()).write(SWICH, "true");
+                        ((MainNavActivity)getActivity()).write(SWICHOILFILTER, "true");
 
                     } else {
                         byte w[] = {1, 1, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
-                        ((MainNavActivity)getActivity()).write(SWICH, "false");
+                        ((MainNavActivity)getActivity()).write(SWICHOILFILTER, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich1.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichcoolantLevel.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich1.isChecked()) {
+                    if (swichcoolantLevel.isChecked()) {
                         byte w[] = {1, 3, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHCOOLANTLEVEL, "true");
 
                     } else {
                         byte w[] = {1, 3, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHCOOLANTLEVEL, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich2.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichfuelwslevel.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich2.isChecked()) {
+                    if (swichfuelwslevel.isChecked()) {
                         byte w[] = {1, 2, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHFUELWSLEVEL, "true");
 
                     } else {
                         byte w[] = {1, 2, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHFUELWSLEVEL, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich3.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichfuelpp.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich3.isChecked()) {
+                    if (swichfuelpp.isChecked()) {
                         byte w[] = {1, 4, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHFUELPP, "true");
 
                     } else {
                         byte w[] = {1, 4, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHFUELPP, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich4.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichthrotback.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich4.isChecked()) {
+                    if (swichthrotback.isChecked()) {
                         byte w[] = {1, 5, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHTHROTBACK, "true");
 
                     } else {
                         byte w[] = {1, 5, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHTHROTBACK, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich5.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichestop.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich5.isChecked()) {
+                    if (swichestop.isChecked()) {
                         byte w[] = {1, 6, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHESTOP, "true");
 
                     } else {
                         byte w[] = {1, 6, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHESTOP, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich6.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichshutdown.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich6.isChecked()) {
+                    if (swichshutdown.isChecked()) {
                         byte w[] = {1, 7, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHSHUTDOWN, "true");
 
                     } else {
                         byte w[] = {1, 7, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onSwich_SwichChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHSHUTDOWN, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich7.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                try {
-                    if (swich7.isChecked()) {
-                        byte w[] = {1, 8, 0, 0, 0, 0, 0, 4};
-                        w[6] = 1;
-                        for (int i = 0; i < w.length; i++) {
-                            listener.onSwich_SwichChange(w[i]);
-                        }
 
-                    } else {
-                        byte w[] = {1, 8, 0, 0, 0, 0, 0, 4};
-                        for (int i = 0; i < w.length; i++) {
-                            listener.onSwich_SwichChange(w[i]);
-                        }
-                    }
-                }catch (Exception e){}
-            }
-        });
 
         return rootView;
     }

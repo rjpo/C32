@@ -42,13 +42,16 @@ public class General extends Fragment  {
     int progres;
     //SeekBar seekBarr, seekBar1, seekBar2,seekBar3,seekBar4,seekBar5;
     BubbleSeekBar seekBareop, seekBarintake, seekBarfuel_presu,seekBarcoolant,seekBartempfuel,seekBartempengineoil;
-    Switch swich1, swich2;
+    Switch swichshutdown, swichcoolantLevel;
     public static final String SEEKBAREOP = "seekBareop";
     public static final String SEEKBARINTAKE = "seekBarintake";
     public static final String SEEKBARFUEL_PRESU = "seekBarfuel_presu";
     public static final String SEEKBARCOOLANT = "seekBarcoolant";
     public static final String SEEKBARTEMPFUEL = "seekBartempfuel";
     public static final String SEEKBARTEMPENGINEOIL = "seekBartempengineoil";
+    public final String SWICHCOOLANTLEVEL = "swichcoolantLevel";
+    public final String SWICHSHUTDOWN = "swichshutdown";
+    public final String FALSE = "false", TRUE = "true";
 
 
     @Override
@@ -74,8 +77,8 @@ public class General extends Fragment  {
         seekBarcoolant = (BubbleSeekBar)vi.findViewById(R.id.ecp);
         seekBartempfuel = (BubbleSeekBar)vi.findViewById(R.id.gfurl_trmp);
         seekBartempengineoil = (BubbleSeekBar)vi.findViewById(R.id.enoiltemp);
-        swich1 = (Switch)vi.findViewById(R.id.switch1);
-        swich2 = (Switch)vi.findViewById(R.id.switch2);
+        swichshutdown = (Switch)vi.findViewById(R.id.switch1);
+        swichcoolantLevel = (Switch)vi.findViewById(R.id.switch2);
 
         if (!((MainNavActivity)getActivity()).get(SEEKBAREOP).equalsIgnoreCase("")) {
             Log.e("LOAD_VALUE_KEY", SEEKBAREOP);
@@ -117,6 +120,18 @@ public class General extends Fragment  {
             seekBartempengineoil.setProgress(Float.parseFloat(
                     ((MainNavActivity)getActivity()).get(SEEKBARTEMPENGINEOIL)
             ));
+        }
+
+        String swichcoolantLevel_state = ((MainNavActivity)getActivity()).get(SWICHCOOLANTLEVEL);
+
+        if (!swichcoolantLevel_state.equalsIgnoreCase("")) {
+            this.setSwich(swichcoolantLevel, swichcoolantLevel_state);
+        }
+
+        String swichshutdown_state = ((MainNavActivity)getActivity()).get(SWICHSHUTDOWN);
+
+        if (!swichshutdown_state.equalsIgnoreCase("")) {
+            this.setSwich(swichshutdown, swichshutdown_state);
         }
 
 
@@ -471,43 +486,47 @@ public class General extends Fragment  {
             }
         });*/
 
-        swich1.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichshutdown.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich1.isChecked()) {
+                    if (swichshutdown.isChecked()) {
                         byte w[] = {1, 7, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onGeneral_SeekChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHSHUTDOWN, "true");
 
                     } else {
                         byte w[] = {1, 7, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onGeneral_SeekChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHSHUTDOWN, "false");
                     }
                 }catch (Exception e){}
             }
         });
 
-        swich2.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
+        swichcoolantLevel.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 try {
-                    if (swich2.isChecked()) {
+                    if (swichcoolantLevel.isChecked()) {
                         byte w[] = {1, 3, 0, 0, 0, 0, 0, 4};
                         w[6] = 1;
                         for (int i = 0; i < w.length; i++) {
                             listener.onGeneral_SeekChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHCOOLANTLEVEL, "true");
 
                     } else {
                         byte w[] = {1, 3, 0, 0, 0, 0, 0, 4};
                         for (int i = 0; i < w.length; i++) {
                             listener.onGeneral_SeekChange(w[i]);
                         }
+                        ((MainNavActivity)getActivity()).write(SWICHCOOLANTLEVEL, "false");
                     }
                 }catch (Exception e){}
             }
@@ -541,6 +560,17 @@ public class General extends Fragment  {
 
     public static interface General_Listener {
         public void onGeneral_SeekChange(byte b);
+    }
+
+    public void setSwich(Switch s, String STATUS) {
+        switch (STATUS) {
+            case TRUE:
+                s.setChecked(true);
+                break;
+            case FALSE:
+                s.setChecked(false);
+                break;
+        }
     }
 
 

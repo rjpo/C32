@@ -156,23 +156,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"/>
 
-    <Switch
-        android:id="@+id/keySwi"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="KEY SWITCH"
-        android:textStyle="bold"
-        android:textSize="10sp"
-        android:textColor="#ffc400"
-        android:gravity="center"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline38"
-        app:layout_constraintTop_toTopOf="@+id/guideline34"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"/>
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"

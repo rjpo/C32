@@ -83,7 +83,7 @@ public class MainNavActivity extends AppCompatActivity implements
         //seek.setOnSeekBarChangeListener(this);
 
         swith=(Switch)findViewById(R.id.switch1);
-        keySw = (Switch) findViewById(R.id.keySwi);
+
 
         cbox = (CheckBox)findViewById(R.id.checkBox);
 
