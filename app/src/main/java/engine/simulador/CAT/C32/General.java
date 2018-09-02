@@ -137,14 +137,14 @@ public class General extends Fragment  {
 
         seekBartempengineoil.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int progres, float progressFloat) {
                 progres=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPENGINEOIL, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int progres, float progressFloat) {
                 try {
                     byte w2[] = {1, 13, 0, 0, 0, 0, 0, 4};
                     w2[3] = (byte) ((progres >> 24) & 0xFF);
@@ -160,7 +160,7 @@ public class General extends Fragment  {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int progres, float progressFloat) {
 
             }
         });
@@ -195,14 +195,14 @@ public class General extends Fragment  {
 
         seekBartempfuel.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int progres, float progressFloat) {
                 progres=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPFUEL, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int progres, float progressFloat) {
                 try {
                     byte w2[] = {1, 11, 0, 0, 0, 0, 0, 4};
                     w2[3] = (byte) ((progres >> 24) & 0xFF);
@@ -218,7 +218,7 @@ public class General extends Fragment  {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int progres, float progressFloat) {
 
             }
         });
@@ -253,14 +253,14 @@ public class General extends Fragment  {
 
         seekBarcoolant.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int progres, float progressFloat) {
                 progres=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARCOOLANT, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int progres, float progressFloat) {
                 try {
                     byte w2[] = {1, 31, 0, 0, 0, 0, 0, 4};
                     w2[3] = (byte) ((progres >> 24) & 0xFF);
@@ -276,7 +276,7 @@ public class General extends Fragment  {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int progres, float progressFloat) {
 
             }
         });
@@ -312,14 +312,14 @@ public class General extends Fragment  {
 
         seekBarfuel_presu.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int progres, float progressFloat) {
                 progres=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARFUEL_PRESU, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int progres, float progressFloat) {
                 try {
                     byte w2[] = {1, 18, 0, 0, 0, 0, 0, 4};
                     w2[3] = (byte) ((progres >> 24) & 0xFF);
@@ -335,7 +335,7 @@ public class General extends Fragment  {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int progres, float progressFloat) {
 
             }
         });
@@ -370,14 +370,14 @@ public class General extends Fragment  {
 
         seekBarintake.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int progres, float progressFloat) {
                 progres=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARINTAKE, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int progres, float progressFloat) {
                 try {
                     byte w1[] = {1, 23, 0, 0, 0, 0, 0, 4};
                     w1[3] = (byte) ((progres >> 24) & 0xFF);
@@ -393,7 +393,7 @@ public class General extends Fragment  {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int progres, float progressFloat) {
 
             }
         });
@@ -429,14 +429,14 @@ public class General extends Fragment  {
 
         seekBareop.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int progres, float progressFloat) {
                 progres=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBAREOP, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int progres, float progressFloat) {
                 try {
 
                     byte w[] = {1, 20, 0, 0, 0, 0, 0, 4};
@@ -452,7 +452,7 @@ public class General extends Fragment  {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int progres, float progressFloat) {
 
             }
         });

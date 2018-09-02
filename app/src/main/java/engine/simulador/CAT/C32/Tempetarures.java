@@ -109,14 +109,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempengine.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPENGINE, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA ENGINE CALIBRADO
                     byte w[] = {1, 15, 0, 0, 0, 0, 0, 4};
@@ -132,7 +132,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
@@ -169,14 +169,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempengineoil.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPENGINEOIL, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA ENGINE OIL CALIBRADO
                     byte w[] = {1, 13, 0, 0, 0, 0, 0, 4};
@@ -192,7 +192,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
@@ -229,14 +229,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempfuel.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPFUEL, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA FUEL CALIBRADO
                     byte w[] = {1, 11, 0, 0, 0, 0, 0, 4};
@@ -252,7 +252,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
 
             }
@@ -290,14 +290,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempfuelrail.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPFUELRAIL, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA FUEL RAIL CALIBRADO
                     byte w[] = {1, 12, 0, 0, 0, 0, 0, 4};
@@ -313,7 +313,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
@@ -350,14 +350,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempambient.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPAMBIENT, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA AMBIENTE CALIBRADO
                     byte w[] = {1, 45, 0, 0, 0, 0, 0, 4};
@@ -373,7 +373,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
@@ -410,14 +410,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempmanifold.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPMANIFOLD, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA MANIFOLD 1 CALIBRADO
                     byte w[] = {1, 10, 0, 0, 0, 0, 0, 4};
@@ -433,7 +433,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
@@ -470,14 +470,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempmanifold2.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPMANIFOLD2, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA MANIFOLD 2 CALIBRADO
                     byte w[] = {1, 9, 0, 0, 0, 0, 0, 4};
@@ -493,7 +493,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
@@ -530,14 +530,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempleft.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPLEFT, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA LEFT
                     byte w[] = {1, 41, 0, 0, 0, 0, 0, 4};
@@ -553,7 +553,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
@@ -590,14 +590,14 @@ public class Tempetarures extends Fragment {
 
         seekBartempraight.setOnProgressChangedListener(new BubbleSeekBar.OnProgressChangedListener() {
             @Override
-            public void onProgressChanged(int progress, float progressFloat) {
+            public void onProgressChanged(int pro, float progressFloat) {
                 pro=1;
                 Log.e("WRITE_KEY_FRAGMENT", ""+progressFloat);
                 ((MainNavActivity)getActivity()).write(SEEKBARTEMPRIGHT, ""+progressFloat);
             }
 
             @Override
-            public void getProgressOnActionUp(int progress, float progressFloat) {
+            public void getProgressOnActionUp(int pro, float progressFloat) {
                 try {
                     // TEMPERATURA RAIGHT
                     byte w[] = {1, 42, 0, 0, 0, 0, 0, 4};
@@ -613,7 +613,7 @@ public class Tempetarures extends Fragment {
             }
 
             @Override
-            public void getProgressOnFinally(int progress, float progressFloat) {
+            public void getProgressOnFinally(int pro, float progressFloat) {
 
             }
         });
