@@ -8,6 +8,16 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import static engine.simulador.CAT.C32.ClearStorage.FALSE;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHCOOLANTLEVEL;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHESTOP;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHFUELPP;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHFUELWSLEVEL;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHOILFILTER;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHSHUTDOWN;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHTHROTBACK;
+import static engine.simulador.CAT.C32.ClearStorage.TRUE;
+
 
 public class Swich extends Fragment {
 
@@ -16,16 +26,6 @@ public class Swich extends Fragment {
     Switch swichoilFilter, swichcoolantLevel, swichfuelwslevel, swichfuelpp, swichthrotback, swichestop, swichshutdown;
 
     int on;
-    public final String FALSE = "false", TRUE = "true";
-
-    public final String SWICHOILFILTER = "swichoilFilter";
-    public final String SWICHCOOLANTLEVEL = "swichcoolantLevel";
-    public final String SWICHSHUTDOWN = "swichshutdown";
-    public final String SWICHESTOP = "swichestop";
-    public final String SWICHTHROTBACK = "swichthrotBack";
-    public final String SWICHFUELWSLEVEL = "swichfuelwslevel";
-    public final String SWICHFUELPP = "swichfuelpp";
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

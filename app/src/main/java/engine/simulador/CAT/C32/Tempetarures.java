@@ -10,21 +10,23 @@ import android.view.ViewGroup;
 
 import com.xw.repo.BubbleSeekBar;
 
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPAMBIENT;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPENGINE;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPENGINEOIL;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPFUEL;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPFUELRAIL;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPLEFT;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPMANIFOLD;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPMANIFOLD2;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPRIGHT;
+
 
 public class Tempetarures extends Fragment {
 
 
     int pro;
     BubbleSeekBar seekBartempengine, seekBartempengineoil, seekBartempfuel, seekBartempfuelrail, seekBartempambient, seekBartempmanifold, seekBartempmanifold2, seekBartempleft, seekBartempraight;
-    public static final String SEEKBARTEMPENGINE = "seekBartempengine";
-    public static final String SEEKBARTEMPENGINEOIL = "seekBartempengineoil";
-    public static final String SEEKBARTEMPFUEL = "seekBartempfuel";
-    public static final String SEEKBARTEMPFUELRAIL = "seekBartempfuelrail";
-    public static final String SEEKBARTEMPAMBIENT = "seekBartempambient";
-    public static final String SEEKBARTEMPMANIFOLD = "seekBartempmanifold";
-    public static final String SEEKBARTEMPMANIFOLD2 = "seekBartempmanifold2";
-    public static final String SEEKBARTEMPLEFT = "seekBartempleft";
-    public static final String SEEKBARTEMPRIGHT = "seekBartempright";
+
 
 
     Temperatures_listener listener;

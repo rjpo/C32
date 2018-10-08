@@ -19,6 +19,17 @@ import android.widget.CompoundButton;
 
 import com.xw.repo.BubbleSeekBar;
 
+import static engine.simulador.CAT.C32.ClearStorage.FALSE;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARCOOLANT;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBAREOP;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARFUEL_PRESU;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARINTAKE;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPENGINEOIL;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTEMPFUEL;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHCOOLANTLEVEL;
+import static engine.simulador.CAT.C32.ClearStorage.SWICHSHUTDOWN;
+import static engine.simulador.CAT.C32.ClearStorage.TRUE;
+
 
 public class General extends Fragment  {
 
@@ -43,15 +54,7 @@ public class General extends Fragment  {
     //SeekBar seekBarr, seekBar1, seekBar2,seekBar3,seekBar4,seekBar5;
     BubbleSeekBar seekBareop, seekBarintake, seekBarfuel_presu,seekBarcoolant,seekBartempfuel,seekBartempengineoil;
     Switch swichshutdown, swichcoolantLevel;
-    public static final String SEEKBAREOP = "seekBareop";
-    public static final String SEEKBARINTAKE = "seekBarintake";
-    public static final String SEEKBARFUEL_PRESU = "seekBarfuel_presu";
-    public static final String SEEKBARCOOLANT = "seekBarcoolant";
-    public static final String SEEKBARTEMPFUEL = "seekBartempfuel";
-    public static final String SEEKBARTEMPENGINEOIL = "seekBartempengineoil";
-    public final String SWICHCOOLANTLEVEL = "swichcoolantLevel";
-    public final String SWICHSHUTDOWN = "swichshutdown";
-    public final String FALSE = "false", TRUE = "true";
+
 
 
     @Override
@@ -280,6 +283,7 @@ public class General extends Fragment  {
 
             }
         });
+        
 
         /*seekBar3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

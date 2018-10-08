@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -32,6 +34,8 @@ import android.widget.Toast;
 
 import com.xw.repo.BubbleSeekBar;
 
+import static engine.simulador.CAT.C32.ClearStorage.keys;
+
 
 public class MainNavActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
@@ -44,7 +48,8 @@ public class MainNavActivity extends AppCompatActivity implements
         BubbleSeekBar.OnProgressChangedListener {
 
 
-
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
     Handler bluetoothIn;
     final int handlerState = 0;
     private BluetoothAdapter btAdapter = null;
@@ -69,6 +74,7 @@ public class MainNavActivity extends AppCompatActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.clear();
         setContentView(R.layout.activity_main_nav);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -98,25 +104,40 @@ public class MainNavActivity extends AppCompatActivity implements
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        FragmentManager fm =getSupportFragmentManager();
 
         switch (option){
-            case 1: fm.beginTransaction().add(R.id.contenido,new General()).commit();break;
-            case 2: fm.beginTransaction().add(R.id.contenido,new Pressure()).commit();break;
-            case 3: fm.beginTransaction().add(R.id.contenido,new Engine()).commit();break;
-            case 4: fm.beginTransaction().add(R.id.contenido,new Tempetarures()).commit();break;
-            case 5: fm.beginTransaction().add(R.id.contenido,new Swich()).commit();break;
-            default: fm.beginTransaction().add(R.id.contenido,new General()).commit();break;
+            case 1:
+                this.setFragmentView(new General());
+                break;
+            case 2:
+                this.setFragmentView(new Pressure());
+                break;
+            case 3:
+                this.setFragmentView(new Engine());
+                break;
+            case 4:
+                this.setFragmentView(new Tempetarures());
+                break;
+            case 5:
+                this.setFragmentView(new Swich());
+                break;
+            default:
+                this.setFragmentView(new General());
+                break;
 
 
         }
 
-
         btAdapter = BluetoothAdapter.getDefaultAdapter(); // get Bluetooth adapter
         VerificarEstadoBT();
-
     }
 
+    public void setFragmentView(Fragment fragment){
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.contenido, fragment);
+        fragmentTransaction.commit();
+    }
 
     public void onClick1(View v){
         if (v.getId()==R.id.checkBox){
@@ -510,6 +531,12 @@ public class MainNavActivity extends AppCompatActivity implements
         SharedPreferences global = getSharedPreferences("stores", Context.MODE_PRIVATE);
         Log.e("VALUE_KEY",  global.getString(key, ""));
         return global.getString(key, "");
+    }
+
+    public void clear() {
+        SharedPreferences global = getSharedPreferences("stores", Context.MODE_PRIVATE);
+        for (int key = 0; key < keys.length ; key++)
+            global.edit().remove(keys[key]).apply();
     }
 
 

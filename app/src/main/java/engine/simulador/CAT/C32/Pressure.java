@@ -10,6 +10,15 @@ import android.view.ViewGroup;
 
 import com.xw.repo.BubbleSeekBar;
 
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARCOOLANT;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARCRANKCASE;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBAREOP;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARFILTRE_IN;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARFUEL_PRESU;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARHCPRAIL;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTRANSFER;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARUNFIL;
+
 
 public class Pressure extends Fragment {
 
@@ -21,14 +30,6 @@ public class Pressure extends Fragment {
 
     int pro;
     BubbleSeekBar seekBarhcprail,seekBarunfil, seekBareop, seekBarfiltre_in, seekBartransfer, seekBarfuel_presu, seekBarcoolant, seekBarcrankcase;
-    public static final String SEEKBARHCPRAIL = "seekBarhcprail";
-    public static final String SEEKBARUNFIL = "seekBarunfil";
-    public static final String SEEKBAREOP = "seekBareop";
-    public static final String SEEKBARFILTRE_IN = "seekBarfiltre_in";
-    public static final String SEEKBARTRANSFER = "seekBartransfer";
-    public static final String SEEKBARFUEL_PRESU = "seekBarfuel_presu";
-    public static final String SEEKBARCOOLANT = "seekBarcoolant";
-    public static final String SEEKBARCRANKCASE = "seekBarcrankcase";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

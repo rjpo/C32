@@ -9,19 +9,21 @@ import android.view.ViewGroup;
 
 import com.xw.repo.BubbleSeekBar;
 
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARATMOS;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARINTAKE;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARINTAKEMAN2;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTBC1;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTURBO2;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTURBO3;
+import static engine.simulador.CAT.C32.ClearStorage.SEEKBARTURBO4;
+
 
 public class Engine extends Fragment {
 
     int progres;
     Engine_Listener listener;
     BubbleSeekBar seekBaratmos, seekBartbc1, seekBarturbo2, seekBarintake,seekBarturbo3,seekBarturbo4,seekBarintakeman2;
-    public static final String SEEKBARATMOS = "seekBaratmos";
-    public static final String SEEKBARTBC1 = "seekBartbc1";
-    public static final String SEEKBARTURBO2 = "seekBarturbo2";
-    public static final String SEEKBARINTAKE = "seekBarintake";
-    public static final String SEEKBARTURBO3 = "seekBarturbo3";
-    public static final String SEEKBARTURBO4 = "seekBarturbo4";
-    public static final String SEEKBARINTAKEMAN2 = "seekBarintakeman2";
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
